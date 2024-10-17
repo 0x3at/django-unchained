@@ -15,22 +15,17 @@ function updateSystemTray(){
 updateSystemTray();
 setInterval(updateSystemTray, 30000);
 
-// Select the start button
 document.getElementById('start-button').addEventListener('click', function () {
     const startMenuContainer = document.getElementById('start-menu-container');
     
-    // Check if the start menu is already present in the DOM
     const existingMenu = document.getElementById('start-menu-container').querySelector('.start-menu');
 
     if (existingMenu) {
-        // If the menu is already there, remove it
         existingMenu.remove();
     } else {
-        // Fetch the HTML fragment (start menu)
         fetch("static/home/props/startMenu.html")
             .then(response => response.text())
             .then(html => {
-                // Insert the fetched HTML into the container
                 startMenuContainer.innerHTML = html;
             })
             .catch(error => {
@@ -47,4 +42,46 @@ document.getElementById('music-toggle').addEventListener('click', function() {
 document.getElementById('vcard-toggle').addEventListener('click', function() {
     const iframe = document.getElementById('vcard-popup-container');
     iframe.style.display = iframe.style.display === 'none' ? 'block' : 'none';
+});
+
+const selectionBox = document.getElementById('selection-box');
+
+let isDragging = false;
+let startX, startY;
+
+document.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+
+    selectionBox.style.left = `${startX}px`;
+    selectionBox.style.top = `${startY}px`;
+    selectionBox.style.width = '0';
+    selectionBox.style.height = '0';
+    selectionBox.style.display = 'block'; 
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+
+    const currentX = e.clientX;
+    const currentY = e.clientY;
+
+    const width = currentX - startX;
+    const height = currentY - startY;
+
+    selectionBox.style.width = `${Math.abs(width)}px`;
+    selectionBox.style.height = `${Math.abs(height)}px`;
+    selectionBox.style.left = `${width < 0 ? currentX : startX}px`;
+    selectionBox.style.top = `${height < 0 ? currentY : startY}px`;
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    selectionBox.style.display = 'none'; 
+});
+
+document.addEventListener('mouseleave', () => {
+    isDragging = false;
+    selectionBox.style.display = 'none'; 
 });

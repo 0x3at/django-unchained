@@ -1,10 +1,18 @@
 .hide-on-mobile {
-    display: none; /* Default to hidden */
+    display: none;
 }
 
-/* Media query for mobile view */
 @media (min-width: 768px) {
     .hide-on-mobile {
-        display: block; /* Show elements on larger screens */
+        display: block; 
     }
+}
+
+#selection-box {
+    position: absolute;
+    border: 1px dashed #007bff; 
+    background-color: rgba(0, 123, 255, 0.2); 
+    border-color: #0600ab;
+    border-width: 2px;
+    display: none; 
 }
