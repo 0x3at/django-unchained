@@ -1,0 +1,196 @@
+<style>
+    @keyframes slideIn {
+        from {
+            transform: translate(-100%, 100%); /* Start off-screen from the bottom left */
+            opacity: 0; /* Start fully transparent */
+        }
+        to {
+            transform: translate(0, 0); /* Move to its final position */
+            opacity: 1; /* Fade in */
+        }
+    }
+    
+    .start-menu {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        height: auto; /* Change to auto if you want it to fit its content */
+        margin: 0;
+        position: fixed; /* Ensure it's positioned fixed */
+        left: 3px; /* 3 pixels from the left */
+        bottom: 2px; /* 53 pixels from the bottom */
+        animation: slideIn 0.5s ease forwards; /* Apply the animation */
+        background-color: rgba(30, 30, 30, 0.8); /* Optional: background color for visibility */
+        opacity: 1; /* Ensure opacity starts at 1 after animation */
+    }
+    
+    .start-menu-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 350px;
+    }
+    
+    .start-menu-panel {
+        display: flex;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 100%;
+    }
+    
+    .start-menu-left {
+        flex: 2;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border-right: 1px solid #ccc;
+    }
+    
+    .start-menu-app-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .start-menu-app-list li {
+        padding: 8px 12px;
+        font-size: 14px;
+        color: #333;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        
+    .start-menu-app-list li a{
+        color: #333;
+        text-decoration: none;
+    }
+    
+    .start-menu-app-list li:hover {
+        background-color: #e7f0fa;
+    }
+    
+    .start-menu-all-programs {
+        margin-top: 12px;
+        text-align: center;
+    }
+    
+    .start-menu-all-programs a {
+        color: #0078d7;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .start-menu-search input {
+        width: 90%;
+        padding: 8px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    .start-menu-right {
+        flex: 1;
+        background: linear-gradient(to bottom, rgba(30, 30, 30, 0.35), rgba(0, 0, 0, 0.5));
+        color: white;
+        padding: 10px;
+        list-style: none;
+    }
+    
+    .start-menu-user-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .start-menu-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .start-menu-username {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    .start-menu-options {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .start-menu-options li {
+        margin: 5px 0;
+    }
+    
+    .start-menu-options li a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    
+    .start-menu-options li a:hover {
+        background: rgba(30, 30, 30, 0.55);
+        border-radius: 2px;
+        
+        
+    }
+    
+    .start-menu-shutdown {
+        background-color: #e81123;
+        color: white;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    
+    .start-menu-shutdown:hover {
+        background-color: #c8102e;
+    }
+    
+</style>
+<div class="start-menu">
+    <div class="start-menu-container">
+        <div class="start-menu-panel">
+            <!-- Left Panel -->
+            <div class="start-menu-left">
+                <ul class="start-menu-app-list">
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Github</a></li>
+                    <li><a href="#">Calender</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Project 1</a></li>
+                    <li><a href="#">Project 2</a></li>
+                    <li><a href="#">Project 3</a></li>
+                    <li><a href="#">Project 4</a></li>
+                    <li><a href="#">Games</a></li>
+                </ul>
+                <div class="start-menu-all-programs">
+                </div>
+                <div class="start-menu-search">
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="start-menu-right">
+                <div class="start-menu-user-info">
+                    <img src='static/home/assets/me.png' alt="Me" class="start-menu-avatar">
+                    <div class="start-menu-username">Ethan</div>
+                </div>
+                <ul class="start-menu-options">
+                    <li><a href="#">Resume</a></li>
+                    <li><a href="#">Favorite Books</a></li>
+                    <li><a href="#">To Read List</a></li>
+                    <li><a href="#">Inspirations</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Goals</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+

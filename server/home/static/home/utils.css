@@ -1,0 +1,10 @@
+.hide-on-mobile {
+    display: none; /* Default to hidden */
+}
+
+/* Media query for mobile view */
+@media (min-width: 768px) {
+    .hide-on-mobile {
+        display: block; /* Show elements on larger screens */
+    }
+}

@@ -1,0 +1,73 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {{page_title}} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'home/base.css' %}">
+    <link rel="stylesheet" href="{% static 'home/utils.css' %}">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+</head>
+<body class="home-body">
+    {%block content%}{%endblock%}
+    <div id="start-menu-container"></div>
+    <div class="music-player" id="music-player" style="display: none;">
+        <audio class="audio-control" controls>
+            <source src="https://streams.fluxfm.de/Chillhop/mp3-128/streams.fluxfm.de/" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <div id="vcard-popup-container" style="display:none;">
+        <iframe 
+        class="vcard-iframe" 
+        height="360px" 
+        width="420px" 
+        src="https://vcard.link/card/DTOc" 
+        ></iframe>
+    </div>
+</body>
+<footer class="taskbar">
+    <div class="start-container">
+        <!-- Add icons, buttons, or links here -->
+        <button class="button-reset" id="start-button">
+            <img src="{% static 'home/assets/start-button.png' %}" alt="Start" class="start">
+        </button>
+    </div>
+    <div class="icon-container">
+        <button class = "button-reset">
+        <img src="{% static 'home/assets/file-explorer.png' %}" alt="Folders" class="icon">
+        </button>
+    </div>
+    <div class="icon-container">
+        <button class="button-reset">
+            <img src="{% static 'home/assets/notepad.png' %}" alt="Notepad" class="icon">
+        </button>
+    </div>
+    <div class="icon-container">
+        <a href="https://github.com/0x3at" target="_blank">
+            <img src="{% static 'home/assets/github.svg' %}" alt="Github" class="icon">
+        </a>
+    </div>
+
+    <div class="system-tray-icons hide-on-mobile">
+        <button class="button-reset" id="music-toggle">
+            <img src="{% static 'home/assets/music-player.png' %}" alt="M"/>
+        </button>
+        <button class="button-reset" onclick='Calendly.initPopupWidget({url: "https://calendly.com/bowtiedwave/quick-calls"});return false;'>
+            <img src="{% static 'home/assets/calender.png' %}" alt="C"/>
+        </button>
+        <button class="button-reset" id="vcard-toggle">
+            <img src="{% static 'home/assets/contact.png' %}" alt="C"/>
+        </button>
+    </div>
+    <div class="system-tray">
+        <span class="time" id="time"></span>
+        <span class="date" id="date"></span>
+    </div>
+</footer>
+    <script src="{% static 'home/base.js' %}"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+</html>
