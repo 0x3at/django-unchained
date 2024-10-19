@@ -1,3 +1,9 @@
+from django.contrib.sessions.models import AbstractBaseSession
 from django.db import models
 
-# Create your models here.
+class CustomSession(AbstractBaseSession):
+    first_time = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = "Custom Session"
+        verbose_name_plural = "Custom Sessions"

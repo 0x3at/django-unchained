@@ -1,18 +1,68 @@
-.hide-on-mobile {
-    display: none;
-}
-
-@media (min-width: 768px) {
-    .hide-on-mobile {
-        display: block; 
-    }
-}
-
 #selection-box {
+z-index:999;
+position:absolute;
+border:1px dashed #007bff;
+display:none;
+border-color:#0600ab;
+border-width:2px;
+background:rgba(0,123,255,0.2);
+}
+
+@media (max-width: 768px){
+.hide-on-mobile {
+display:hide;
+}
+}
+
+#video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure it covers the full screen */
+}
+
+#startup {
     position: absolute;
-    border: 1px dashed #007bff; 
-    background-color: rgba(0, 123, 255, 0.2); 
-    border-color: #0600ab;
-    border-width: 2px;
-    display: none; 
+    top: 50%;
+    left: 50%;
+    width: 100%; /* Adjusts width to fit parent container */
+    height: 100%; /* Maintains aspect ratio */
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure it is above the black overlay */
+}
+
+#startup-mobile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto; /* Adjusts width to fit parent container */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure it is above the black overlay */
+}
+
+
+
+.arrow-container { 
+    display: block; /* Show arrow on smaller screens */   
+    position: relative;
+    grid-area: arrow-container;
+    margin: 0 auto;
+    place-items: center;
+}
+
+
+
+.arrow {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    align-items: center; 
+    padding-top: 2px;
+    place-self: center;
 }
