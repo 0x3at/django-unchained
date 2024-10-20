@@ -6,6 +6,21 @@ html {
 }
 
 
+.home-body {
+    background-image: url('assets/windows-home.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh !important;
+    width: 100vw !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    position: fixed !important;
+}
+
 .home-body-blacked {
     background-color: black;
     background-size: cover;
@@ -21,20 +36,6 @@ html {
     position: fixed !important;
 }
 
-.home-body {
-    background-image: url('assets/windows-home.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100vh !important;
-    width: 100vw !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    position: fixed !important;
-}
 .taskbar{
     position: fixed;
     bottom: 0;

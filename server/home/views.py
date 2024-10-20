@@ -5,7 +5,7 @@ from django.contrib.sessions.models import Session
 
 # Create your views here.
 
-DEBUG_STARTUP = False
+DEBUG_STARTUP = True
 
 def index(request):
     context = {

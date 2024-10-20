@@ -5,14 +5,15 @@ let completeHTML; // Declare as global variable
 function setupReturnUserUI() {
     console.log("Returning user - startup rendering");
         const body = document.body;
-        body.classList.add("home-body");
-        body.classList.remove('home-body-blacked');
+        body.classList.add('home-body');
+        body.classList.remove("home-body-blacked'");
         const taskbar = document.getElementById("taskbar");
         taskbar.style.display = "flex";
 };
 
 function handleFirstTimeVisit() {
     console.log("First time visit - startup rendering");
+    document.getElementById('taskbar').style.display = "none";
     toggleSelectionBox();
     const body = document.body;
     const welcomeScreen = document.createElement("div");
@@ -46,16 +47,24 @@ Click Here!
             </div>
         </div>
     </div>
-</div>`;
+</div>
+<script>
+document.getElementById('ws-component-grid')addEventListener('load', function(){
+document.body.removeAttribute('hidden');
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+});
+</script>
+`;
 
     // Combine the parts to form the complete HTML
     completeHTML = formatString("{0}{1}{2}", beforeTooltip, tooltipStyles, afterTooltip);
     const sanitizedHTML = completeHTML.replace(/\n/g, '').replace(/\s+/g, ' ');
     welcomeScreen.innerHTML = sanitizedHTML;
     body.insertBefore(welcomeScreen, body.firstChild);
-
     const baloonHolster = document.getElementById("baloon-holster");
     const passwordBox = document.getElementById("text26");
+    document.body.removeAttribute('hidden');
     setTimeout(typewriterEffect, 500);
     document.getElementById('pass-enter').addEventListener('click', function() {
         handlePostSignInActions();
@@ -86,18 +95,18 @@ function handlePostSignInActions() {
         console.log(startup_video.currentTime);
         startup_video.play().catch(function(error) {
             console.error('Error playing startup video:', error);
-            startup_video.remove();
+            startup_video.style.display = "none";
             taskbar.style.display = "flex";
-            body.classList.add("home-body");
             body.classList.remove('home-body-blacked');
+            body.classList.add("home-body");
             toggleSelectionBox(initialize=true);
 
         });
         startup_video.addEventListener('ended', function() {
-            startup_video.remove();
+            startup_video.style.display = "none";
             taskbar.style.display = "flex";
-            body.classList.add("home-body");
             body.classList.remove('home-body-blacked');
+            body.classList.add("home-body");
             toggleSelectionBox(initialize=true);
         })
     }
@@ -109,7 +118,7 @@ function handlePostSignInActions() {
         console.log("Video is playing");
         console.log(startup_video.currentTime);
         startup_video.addEventListener('ended', function() {
-            startup_video.remove();
+            startup_video.style.display = "none";
             taskbar.style.display = "flex";
             toggleSelectionBox(initialize=true);
         });
@@ -120,7 +129,6 @@ function handlePostSignInActions() {
 const textToType = "Win7 is the best os don't @ me";
 
 function typewriterEffect(baloonHolster, passwordBox, textIndex) {
-    console.log(textIndex)
     if (textIndex < textToType.length) {
         passwordBox.value += textToType.charAt(textIndex);
         textIndex++;
@@ -178,7 +186,7 @@ let startX, startY;
 function initializeSelectionBox() {
     if (selectionBoxEnabled===false) return;
 
-    document.addEventListener('mousedown', handleMouseDown);
+    document.body.addEventListener('mousedown', handleMouseDown);
 }
 
 function handleMouseDown(e) {

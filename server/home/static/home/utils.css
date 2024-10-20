@@ -66,3 +66,8 @@ display:hide;
     padding-top: 2px;
     place-self: center;
 }
+
+
+#render-postpone {
+    display: none; /* Initially hide the content */
+  }

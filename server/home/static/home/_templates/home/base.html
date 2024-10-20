@@ -6,15 +6,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>{% block title %} {{page_title}} {% endblock %}</title>
       <link id="win7css-stylesheet" rel="stylesheet" href="https://unpkg.com/7.css">
-      <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-      <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
       <link rel="stylesheet" href="{% static 'home/base.css' %}">
       <link rel="stylesheet" href="{% static 'home/utils.css' %}">
+      <link id="welcome-stylesheet" rel="stylesheet" href="{% static 'home/welcome.css' %}">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
    </head>
-   <body class="home-body-blacked" id="base-body">
+   <body class="home-body" id="base-body" hidden>
     <video class="startup" id="startup" style="display:none">
         <source src="{% static 'home/assets/startup.mp4' %}" type="video/mp4">
      </video>
@@ -108,7 +107,6 @@
    <script src="{% static 'home/utils.js' %}"></script>
 
 {% if load_startup %}
-   <link id="welcome-stylesheet" rel="stylesheet" href="{% static 'home/welcome.css' %}">
    <script>
       console.log("First Time Visit");
       var selectionBoxEnabled = false;
@@ -120,6 +118,7 @@
    </script>
 {% elif not load_startup %}
    <script>
+      document.body.removeAttribute('hidden');
       console.log("Returning User");
       var selectionBoxEnabled = true;
       document.addEventListener('DOMContentLoaded', function(){

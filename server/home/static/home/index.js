@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('icon-github').addEventListener('click', function() {
         console.log("Github icon clicked");
         renderIframe('https://github.com/0x3at');
-    })
+    })})
     
     document.getElementById('icon-linkedin').addEventListener('click', function() {
         console.log("LinkedIn icon clicked");
@@ -39,5 +39,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('icon-replay-startup').addEventListener('click', function() {
         handleFirstTimeVisit();
-    })
 });
