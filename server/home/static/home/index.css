@@ -47,10 +47,10 @@
         grid-template-rows: 1fr 32px 1fr 32px; 
         gap: 0px 0px; 
         grid-template-areas: 
-            "desktop-icon-image-cell-1 desktop-icon-image-cell-2"
-            "desktop-icon-p-cell-1 desktop-icon-p-cell-2"
             "desktop-icon-image-cell-3 desktop-icon-image-cell-4"
-            "desktop-icon-p-cell-3 desktop-icon-p-cell-4"; 
+            "desktop-icon-p-cell-3 desktop-icon-p-cell-4"
+            "desktop-icon-image-cell-2 desktop-icon-image-cell-1"
+            "desktop-icon-p-cell-2 desktop-icon-p-cell-1"; 
         }
       .desktop-icon-grid-cell-top-right {
         justify-self: center; 
