@@ -23,7 +23,7 @@ def index(request):
     # Save the session to ensure the updated data persists
     request.session.save()
 
-    template = loader.get_template("home/base.html")
+    template = loader.get_template("home/index.html")
     return HttpResponse(template.render(context, request))
 
 

@@ -1,0 +1,317 @@
+.desktop-grid-container {
+    justify-self: center;
+    align-self: center;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    width: 75%;
+    height: 75%;
+    grid-template-areas: 
+    "desktop-icon-grid-cell-top-left . desktop-icon-grid-cell-top-right"
+    ". desktop-icon-grid-cell-middle .";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+}
+
+.desktop-grid-container-mobile {
+    display: none;
+}
+
+.desktop-icon-grid-cell-top-left {
+    justify-self: center; 
+    align-self: center; 
+    grid-area: desktop-icon-grid-cell-top-left; 
+    width: 100%; 
+    height: 100%; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 32px 1fr 32px; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "desktop-icon-image-cell-1 desktop-icon-image-cell-2"
+        "desktop-icon-p-cell-1 desktop-icon-p-cell-2"
+        "desktop-icon-image-cell-3 desktop-icon-image-cell-4"
+        "desktop-icon-p-cell-3 desktop-icon-p-cell-4"; 
+    }
+
+    .desktop-icon-grid-cell-middle {    
+        justify-self: center; 
+        align-self: center; 
+        grid-area: desktop-icon-grid-cell-middle; 
+        width: 100%; 
+        height: 100%; 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 32px 1fr 32px; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+            "desktop-icon-image-cell-1 desktop-icon-image-cell-2"
+            "desktop-icon-p-cell-1 desktop-icon-p-cell-2"
+            "desktop-icon-image-cell-3 desktop-icon-image-cell-4"
+            "desktop-icon-p-cell-3 desktop-icon-p-cell-4"; 
+        }
+      .desktop-icon-grid-cell-top-right {
+        justify-self: center; 
+        align-self: center; 
+        grid-area: desktop-icon-grid-cell-top-right; 
+        width: 100%; 
+        height: 100%;
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 32px 1fr 32px; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+            "desktop-icon-image-cell-1 desktop-icon-image-cell-2"
+            "desktop-icon-p-cell-1 desktop-icon-p-cell-2"
+            "desktop-icon-image-cell-3 desktop-icon-image-cell-4"
+            "desktop-icon-p-cell-3 desktop-icon-p-cell-4"; 
+        }
+
+.desktop-icon-image-cell-1 { grid-area: desktop-icon-image-cell-1; }
+.desktop-icon-image-cell-2 { grid-area: desktop-icon-image-cell-2; }
+.desktop-icon-image-cell-3 { grid-area: desktop-icon-image-cell-3; }
+.desktop-icon-image-cell-4 { grid-area: desktop-icon-image-cell-4; }
+.desktop-icon-p-cell-1 { grid-area: desktop-icon-p-cell-1; }
+.desktop-icon-p-cell-2 { grid-area: desktop-icon-p-cell-2; }
+.desktop-icon-p-cell-3 { grid-area: desktop-icon-p-cell-3; }
+.desktop-icon-p-cell-4 { grid-area: desktop-icon-p-cell-4; }
+
+
+.desktop-icon-image-cell-1,
+.desktop-icon-image-cell-2,
+.desktop-icon-image-cell-3,
+.desktop-icon-image-cell-4 {
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 10px; /* Border radius for rounded corners */
+    width: 50vw; /* Set width to a percentage of the viewport width */
+    height: 50vw; /* Set height equal to width for square */
+    max-width: 128px; /* Optional: maximum width */
+    max-height: 128px; /* Optional: maximum height */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    top: 50%;
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+
+}
+
+.desktop-icon-image-cell-1:before,
+.desktop-icon-image-cell-2:before,
+.desktop-icon-image-cell-3:before,
+.desktop-icon-image-cell-4:before {
+    top: 50%; /* Move down 50% of the container */
+    left: 50%; /* Move right 50% of the container */
+    width: 50vw; /* Set width to a percentage of the viewport width */
+    height: 50vw; /* Set height equal to width for square */
+    max-width: 128px; /* Optional: maximum width */
+    max-height: 128px; /* Optional: maximum height */
+    transform: translate(-50%, -50%); /* Offset to center the element */
+    border-radius: 10px; /* Match border radius of the cell */
+    z-index: 0; /* Place below the content */
+    filter: blur(5px); /* Blur for a glossy effect */
+}
+
+.desktop-icon-p-cell-1,
+.desktop-icon-p-cell-2,
+.desktop-icon-p-cell-3,
+.desktop-icon-p-cell-4 {
+    color: #ffffff;
+    z-index: 1; /* Ensure text is above the glossy effect */
+    font-size: 16px; /* Corrected font size */
+    text-align: center; /* Center text horizontally */
+    justify-self: center;
+    font-family: 'Asap', sans-serif !important; /* Added fallback font */
+    text-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.4), /* Outer shadow */
+        -2px -2px 5px rgba(255, 255, 255, 0.3); /* Inner shadow */
+    text-justify: center;
+    line-height: 1;
+    margin:auto auto auto auto;
+}
+
+/* Hover effect */
+.desktop-icon-image-cell-1:hover,
+.desktop-icon-image-cell-2:hover,
+.desktop-icon-image-cell-3:hover,
+.desktop-icon-image-cell-4:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Increase shadow on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Click effect */
+.desktop-icon-image-cell-1:active,
+.desktop-icon-image-cell-2:active,
+.desktop-icon-image-cell-3:active,
+.desktop-icon-image-cell-4:active {
+    transform: scale(0.95); /* Scale down on click */
+}
+
+@media (max-width: 768px) {
+    .desktop-grid-container {
+        display: none;
+    }
+    
+    .desktop-icon-grid-cell-top-left{
+        display: none;
+    }
+    .desktop-icon-grid-cell-middle{
+        display: none;
+    }
+    .desktop-icon-grid-cell-top-right{
+        display: none;
+    }
+
+    .desktop-icon-p-cell-1,
+    .desktop-icon-p-cell-2,
+    .desktop-icon-p-cell-3,
+    .desktop-icon-p-cell-4 {
+        display: none;
+    }
+
+    .desktop-grid-container-mobile {
+        padding-right: 12px;
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr 24px; 
+        gap: 0px 0px; 
+        width: 80vw;
+        height: 80vh;
+        position: absolute;
+        margin: auto auto auto auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center horizontally and vertically */
+        grid-template-areas: 
+        "desktop-icon-image-cell-1-mobile desktop-icon-image-cell-2-mobile"
+        "desktop-icon-p-cell-1-mobile desktop-icon-p-cell-2-mobile"
+        "desktop-icon-image-cell-3-mobile desktop-icon-image-cell-4-mobile"
+        "desktop-icon-p-cell-3-mobile desktop-icon-p-cell-4-mobile"
+        "desktop-icon-image-cell-5-mobile desktop-icon-image-cell-6-mobile"
+        "desktop-icon-p-cell-5-mobile desktop-icon-p-cell-6-mobile"
+        "desktop-icon-image-cell-7-mobile desktop-icon-image-cell-8-mobile"
+        "desktop-icon-p-cell-7-mobile desktop-icon-p-cell-8-mobile"
+        "desktop-icon-image-cell-9-mobile desktop-icon-image-cell-10-mobile"
+        "desktop-icon-p-cell-9-mobile desktop-icon-p-cell-10-mobile"
+        "desktop-icon-image-cell-11-mobile desktop-icon-image-cell-12-mobile"
+        "desktop-icon-p-cell-11-mobile desktop-icon-p-cell-12-mobile";
+}
+
+.desktop-icon-image-cell-1-mobile { grid-area: desktop-icon-image-cell-1-mobile; }
+.desktop-icon-image-cell-2-mobile { grid-area: desktop-icon-image-cell-2-mobile; }
+.desktop-icon-image-cell-3-mobile { grid-area: desktop-icon-image-cell-3-mobile; }
+.desktop-icon-image-cell-4-mobile { grid-area: desktop-icon-image-cell-4-mobile; }
+.desktop-icon-image-cell-5-mobile { grid-area: desktop-icon-image-cell-5-mobile; }
+.desktop-icon-image-cell-6-mobile { grid-area: desktop-icon-image-cell-6-mobile; }
+.desktop-icon-image-cell-7-mobile { grid-area: desktop-icon-image-cell-7-mobile; }
+.desktop-icon-image-cell-8-mobile { grid-area: desktop-icon-image-cell-8-mobile; }
+.desktop-icon-image-cell-9-mobile { grid-area: desktop-icon-image-cell-9-mobile; }
+.desktop-icon-image-cell-10-mobile { grid-area: desktop-icon-image-cell-10-mobile; }
+.desktop-icon-image-cell-11-mobile { grid-area: desktop-icon-image-cell-11-mobile; }
+.desktop-icon-image-cell-12-mobile { grid-area: desktop-icon-image-cell-12-mobile; }
+.desktop-icon-p-cell-1-mobile { grid-area: desktop-icon-p-cell-1-mobile; }
+.desktop-icon-p-cell-2-mobile { grid-area: desktop-icon-p-cell-2-mobile; }
+.desktop-icon-p-cell-3-mobile { grid-area: desktop-icon-p-cell-3-mobile; }
+.desktop-icon-p-cell-4-mobile { grid-area: desktop-icon-p-cell-4-mobile; }
+.desktop-icon-p-cell-5-mobile { grid-area: desktop-icon-p-cell-5-mobile; }
+.desktop-icon-p-cell-6-mobile { grid-area: desktop-icon-p-cell-6-mobile; }
+.desktop-icon-p-cell-7-mobile { grid-area: desktop-icon-p-cell-7-mobile; }
+.desktop-icon-p-cell-8-mobile { grid-area: desktop-icon-p-cell-8-mobile; }
+.desktop-icon-p-cell-9-mobile { grid-area: desktop-icon-p-cell-9-mobile; }
+.desktop-icon-p-cell-10-mobile { grid-area: desktop-icon-p-cell-10-mobile; }
+.desktop-icon-p-cell-11-mobile { grid-area: desktop-icon-p-cell-11-mobile; }
+.desktop-icon-p-cell-12-mobile { grid-area: desktop-icon-p-cell-12-mobile; }
+
+      .desktop-icon-image-cell-1-mobile,
+      .desktop-icon-image-cell-2-mobile,
+      .desktop-icon-image-cell-3-mobile,
+      .desktop-icon-image-cell-4-mobile, 
+      .desktop-icon-image-cell-5-mobile,
+      .desktop-icon-image-cell-6-mobile,
+      .desktop-icon-image-cell-7-mobile,
+      .desktop-icon-image-cell-8-mobile,
+      .desktop-icon-image-cell-9-mobile,
+      .desktop-icon-image-cell-10-mobile,
+      .desktop-icon-image-cell-11-mobile,
+      .desktop-icon-image-cell-12-mobile {
+    align-items: center; 
+    border-radius: 5px; /* Border radius for rounded corners */
+    width: 40vw; /* Set width to a percentage of the viewport width */
+    height: 40vw; /* Set height equal to width for square */
+    max-width: 54px; /* Optional: maximum width */
+    max-height: 54px; /* Optional: maximum height */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    top: 25%;
+    left: 25%;
+    margin-top:auto;
+    margin-bottom:0;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+
+      }
+
+      .desktop-icon-image-cell-11-mobile,
+      .desktop-icon-image-cell-12-mobile {
+            padding-bottom: -32px;
+        }
+    .desktop-icon-p-cell-1-mobile,
+    .desktop-icon-p-cell-2-mobile,
+    .desktop-icon-p-cell-3-mobile,
+    .desktop-icon-p-cell-4-mobile,
+    .desktop-icon-p-cell-5-mobile,
+    .desktop-icon-p-cell-6-mobile,
+    .desktop-icon-p-cell-7-mobile,
+    .desktop-icon-p-cell-8-mobile,
+    .desktop-icon-p-cell-9-mobile,
+    .desktop-icon-p-cell-10-mobile,
+    .desktop-icon-p-cell-11-mobile,
+    .desktop-icon-p-cell-12-mobile {
+    color: #ffffff;
+    z-index: 998; /* Ensure text is above the glossy effect */
+    font-size: 13px; /* Corrected font size */
+    font-weight: 450;
+    text-align: center; /* Center text horizontally */
+    justify-self: center;
+    font-family: 'Asap', sans-serif !important; /* Added fallback font */
+    text-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.6), /* Outer shadow */
+        -2px -2px 5px rgba(255, 255, 255, 0.3); /* Inner shadow */
+
+    text-shadow: dr;
+    text-justify: center;
+    line-height: 1;
+    margin-bottom:12px;
+    margin-top: 12px;
+    }
+
+    .desktop-icon-p-cell-11-mobile,
+        .desktop-icon-p-cell-12-mobile {
+            margin-bottom:64px;
+        }
+
+    .desktop-icon-p-cell-1-mobile::before,
+    .desktop-icon-p-cell-2-mobile::before,
+    .desktop-icon-p-cell-3-mobile::before,
+    .desktop-icon-p-cell-4-mobile::before,
+    .desktop-icon-p-cell-5-mobile::before,
+    .desktop-icon-p-cell-6-mobile::before,
+    .desktop-icon-p-cell-7-mobile::before,
+    .desktop-icon-p-cell-8-mobile::before,
+    .desktop-icon-p-cell-9-mobile::before,
+    .desktop-icon-p-cell-10-mobile::before,
+    .desktop-icon-p-cell-11-mobile::before,
+    .desktop-icon-p-cell-12-mobile::before {
+        content: ''; /* Create an empty pseudo-element */
+        background: inherit; /* Inherit the background from the parent */
+        backdrop-filter: blur(10px); /* Apply the blur effect */
+        z-index: -1; /* Place it behind the content */
+        border-radius: 10px; /* Match the border radius of the parent */
+    }
+}
+
+

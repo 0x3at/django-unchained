@@ -1,8 +1,24 @@
 html {
-    font-family: 'Asap';
+    font-family: 'Asap' !important;
     text-shadow: 
     2px 2px 5px rgba(0, 0, 0, 0.1),   /* Outer shadow */
    -2px -2px 5px rgba(255, 255, 255, 0.1);
+}
+
+
+.home-body-blacked {
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh !important;
+    width: 100vw !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    position: fixed !important;
 }
 
 .home-body {
@@ -11,16 +27,14 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    height: 100vh !important;
+    width: 100vw !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    position: fixed !important;
 }
-
-.home-body-blacked {
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
 .taskbar{
     position: fixed;
     bottom: 0;

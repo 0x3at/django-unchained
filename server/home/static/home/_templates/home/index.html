@@ -1,0 +1,78 @@
+{%extends "home/base.html"%}
+{%load static%}
+{%block title%}Duhsktop{%endblock%}
+{%block content%}
+<link rel="stylesheet" type="text/css" href="{% static 'home/index.css' %}">
+<div class="desktop-grid-container">
+    <div class="desktop-icon-grid-cell-top-left">
+        <img src="https://img.icons8.com/?size=100&id=nXgKLCSNhAWG&format=png&color=000000" alt="Icon 1" class="desktop-icon-image-cell-1" id="icon-github"/>
+        <p class="desktop-icon-p-cell-1">My Github</p>
+        <img src="https://img.icons8.com/?size=100&id=ZmG5l3ueI6FO&format=png&color=000000" alt="Icon 2" class="desktop-icon-image-cell-2" id="icon-linkedin" />
+        <p class="desktop-icon-p-cell-2">My LinkedIn</p>
+        <img src="https://img.icons8.com/?size=100&id=LuNORLS5oBkQ&format=png&color=000000" alt="Icon 3" class="desktop-icon-image-cell-3" id="icon-pypi" />
+        <p class="desktop-icon-p-cell-3">Public PyPI Packages</p>
+        <img src="https://img.icons8.com/?size=100&id=18900&format=png&color=000000" alt="Icon 4" class="desktop-icon-image-cell-4" id="icon-blog" />
+        <p class="desktop-icon-p-cell-4">Blog</p>
+    </div>
+    <div class="desktop-icon-grid-cell-middle">
+        <img src="https://img.icons8.com/?size=100&id=24044&format=png&color=000000" alt="Icon 1" class="desktop-icon-image-cell-1" id="icon-game1" />
+        <p class="desktop-icon-p-cell-1">Game 1</p>
+        <img src="{% static 'home/assets/music-player.png' %}" alt="Icon 2" class="desktop-icon-image-cell-2" id="icon-music-player" />
+        <p class="desktop-icon-p-cell-2">Music Player</p>
+        <img src="https://img.icons8.com/?size=100&id=waj9ZJ0ANYA7&format=png&color=000000" alt="Icon 3" class="desktop-icon-image-cell-3" id="icon-game2" />
+        <p class="desktop-icon-p-cell-3">Game 2</p>
+        <img src="https://img.icons8.com/?size=100&id=IwZ4mbmrC5gw&format=png&color=000000" alt="Icon 4" class="desktop-icon-image-cell-4" id="icon-replay-startup" />
+        <p class="desktop-icon-p-cell-4">Replay Starup</p>
+    </div>
+    <div class="desktop-icon-grid-cell-top-right">
+        <img src="https://img.icons8.com/?size=100&id=PRchDVeCO6lI&format=png&color=000000" alt="Icon 1" class="desktop-icon-image-cell-1" id="icon-resume" />
+        <p class="desktop-icon-p-cell-1">My Resume</p>
+        <img src="https://img.icons8.com/?size=100&id=RAJumtHjdFxO&format=png&color=000000" alt="Icon 2" class="desktop-icon-image-cell-2" id="icon-contact" />
+        <p class="desktop-icon-p-cell-2">My Contact Info</p>
+        <img src="https://img.icons8.com/?size=100&id=WpQIVxfhhzqt&format=png&color=000000" alt="Icon 3" class="desktop-icon-image-cell-3" id="icon-calender" />
+        <p class="desktop-icon-p-cell-3">My Calender</p>
+        <img src="https://img.icons8.com/?size=100&id=rnh5ofYIRjYP&format=png&color=000000" alt="Icon 4" class="desktop-icon-image-cell-4" id="icon-references" />
+        <p class="desktop-icon-p-cell-4">My References</p>
+    </div>
+</div>
+<div class="desktop-grid-container-mobile">
+    <img src="https://img.icons8.com/?size=100&id=nXgKLCSNhAWG&format=png&color=000000" alt="Icon 1" class="desktop-icon-image-cell-1-mobile" id="mobile-icon-github"/>
+    <p class="desktop-icon-p-cell-1-mobile">My Github</p>
+
+    <img src="https://img.icons8.com/?size=100&id=ZmG5l3ueI6FO&format=png&color=000000" alt="Icon 2" class="desktop-icon-image-cell-2-mobile" id="mobile-icon-linkedin"/>
+    <p class="desktop-icon-p-cell-2-mobile">My LinkedIn</p>
+
+    <img src="https://img.icons8.com/?size=100&id=LuNORLS5oBkQ&format=png&color=000000" alt="Icon 3" class="desktop-icon-image-cell-3-mobile" id="mobile-icon-pypy"/>
+    <p class="desktop-icon-p-cell-3-mobile">Public PyPI Packages</p>
+
+    <img src="https://img.icons8.com/?size=100&id=18900&format=png&color=000000" alt="Icon 4" class="desktop-icon-image-cell-4-mobile" id="mobile-icon-blog"/>
+    <p class="desktop-icon-p-cell-4-mobile">Blog</p>
+
+    <img src="https://img.icons8.com/?size=100&id=24044&format=png&color=000000" alt="Icon 5" class="desktop-icon-image-cell-5-mobile" id="mobile-icon-game1"/>
+    <p class="desktop-icon-p-cell-5-mobile">Game 1</p>
+
+    <img src="{% static 'home/assets/music-player.png' %}" alt="Icon 6" class="desktop-icon-image-cell-6-mobile" id="mobile-icon-music-player"/>
+    <p class="desktop-icon-p-cell-6-mobile">Music Player</p>
+
+    <img src="https://img.icons8.com/?size=100&id=waj9ZJ0ANYA7&format=png&color=000000" alt="Icon 7" class="desktop-icon-image-cell-7-mobile" id="mobile-icon-game2"/>
+    <p class="desktop-icon-p-cell-7-mobile">Game 2</p>
+
+    <img src="https://img.icons8.com/?size=100&id=IwZ4mbmrC5gw&format=png&color=000000" alt="Icon 8" class="desktop-icon-image-cell-8-mobile" id="mobile-icon-replay-startup"/>
+    <p class="desktop-icon-p-cell-8-mobile">Replay Startup</p>
+
+    <img src="https://img.icons8.com/?size=100&id=PRchDVeCO6lI&format=png&color=000000" alt="Icon 9" class="desktop-icon-image-cell-9-mobile" id="mobile-icon-resume"/>
+    <p class="desktop-icon-p-cell-9-mobile">My Resume</p>
+
+    <img src="https://img.icons8.com/?size=100&id=RAJumtHjdFxO&format=png&color=000000" alt="Icon 10" class="desktop-icon-image-cell-10-mobile" id="mobile-icon-contact"/>
+    <p class="desktop-icon-p-cell-10-mobile">My Contact Info</p>
+
+    <img src="https://img.icons8.com/?size=100&id=WpQIVxfhhzqt&format=png&color=000000" alt="Icon 11" class="desktop-icon-image-cell-11-mobile" id="mobile-icon-calendar"/>
+    <p class="desktop-icon-p-cell-11-mobile">My Calendar</p>
+
+    <img src="https://img.icons8.com/?size=100&id=rnh5ofYIRjYP&format=png&color=000000" alt="Icon 12" class="desktop-icon-image-cell-12-mobile" id="mobile-icon-references"/>
+    <p class="desktop-icon-p-cell-12-mobile">My References</p>
+</div>
+<script type="module">
+    import { Octokit, App } from "https://esm.sh/octokit";
+    </script><script src="{% static 'home/index.js' %}"></script>
+{%endblock%}
